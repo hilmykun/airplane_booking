@@ -13,7 +13,6 @@ class BonusPage extends StatelessWidget {
         decoration: BoxDecoration(
             image: const DecorationImage(
               image: AssetImage('assets/image_card.png'),
-              fit: BoxFit.cover,
             ),
             boxShadow: [
               BoxShadow(
@@ -107,7 +106,9 @@ class BonusPage extends StatelessWidget {
         height: 55,
         margin: const EdgeInsets.only(top: 50),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/main-page');
+          },
           style: TextButton.styleFrom(
             backgroundColor: kPrimaryColor,
             shape: RoundedRectangleBorder(
