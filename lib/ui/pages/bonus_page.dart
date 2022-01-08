@@ -22,11 +22,13 @@ class BonusPage extends StatelessWidget {
               )
             ]),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Name',
                           style: whiteTextStyle.copyWith(fontWeight: light)),
@@ -101,35 +103,21 @@ class BonusPage extends StatelessWidget {
     }
 
     Widget startButton() {
-      return Container(
-        width: 220,
-        height: 55,
-        margin: const EdgeInsets.only(top: 50),
-        child: TextButton(
+      return CustomButton(
+          title: 'Start Fly Now',
+          width: 220,
+          margin: const EdgeInsets.only(top: 50),
           onPressed: () {
             Navigator.pushNamed(context, '/main-page');
-          },
-          style: TextButton.styleFrom(
-            backgroundColor: kPrimaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(defaultMargin),
-            ),
-          ),
-          child: Text(
-            'Start fly now',
-            style: whiteTextStyle.copyWith(
-              fontSize: 18,
-              fontWeight: medium,
-            ),
-          ),
-        ),
-      );
+          });
     }
 
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [bonusCard(), title(), subtitle(), startButton()],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [bonusCard(), title(), subtitle(), startButton()],
+        ),
       ),
     );
   }

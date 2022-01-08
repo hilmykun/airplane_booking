@@ -22,13 +22,13 @@ class CustomButtonNavigationItem extends StatelessWidget {
                   image: AssetImage(
             imageUrl,
           ))),
-          child: Icon(Icons.home, color: kWhiteColor),
         ),
         Container(
           width: 30,
           height: 2,
           decoration: BoxDecoration(
-              color: isSelected ? kPrimaryColor : kTransparentColor, borderRadius: BorderRadius.circular(18)),
+              color: isSelected ? kPrimaryColor : kTransparentColor,
+              borderRadius: BorderRadius.circular(18)),
         )
       ],
     );

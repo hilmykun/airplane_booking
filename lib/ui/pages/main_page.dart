@@ -5,6 +5,10 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget buildContent() {
+      return const HomePage();
+    }
+
     Widget customButtonNavigation() {
       return Align(
         alignment: Alignment.bottomCenter,
@@ -16,19 +20,20 @@ class MainPage extends StatelessWidget {
           decoration: BoxDecoration(
               color: kWhiteColor, borderRadius: BorderRadius.circular(18)),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
               CustomButtonNavigationItem(
-                imageUrl: 'Assets/fi_globe.png',
+                imageUrl: 'assets/fi_globe.png',
                 isSelected: true,
               ),
               CustomButtonNavigationItem(
-                imageUrl: 'Assets/fi_book-open.png',
+                imageUrl: 'assets/fi_book-open.png',
               ),
               CustomButtonNavigationItem(
-                imageUrl: 'Assets/fi_credit-card.png',
+                imageUrl: 'assets/fi_credit-card.png',
               ),
               CustomButtonNavigationItem(
-                imageUrl: 'Assets/fi_settings.png',
+                imageUrl: 'assets/fi_settings.png',
               ),
             ],
           ),
@@ -38,7 +43,7 @@ class MainPage extends StatelessWidget {
 
     return Scaffold(
       body: Stack(
-        children: [customButtonNavigation()],
+        children: [buildContent(), customButtonNavigation()],
       ),
     );
   }

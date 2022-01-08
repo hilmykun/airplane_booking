@@ -15,127 +15,40 @@ class SignUpPage extends StatelessWidget {
 
     Widget inputSection() {
       Widget nameInput() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Full Name'),
-              const SizedBox(height: 10),
-              TextFormField(
-                cursorColor: kBlackColor,
-                decoration: InputDecoration(
-                  hintText: 'Enter your full name',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: kPrimaryColor),
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
+        return const CustomTextFormField(
+            title: 'Full Name', hintText: 'Enter Your Name');
       }
 
       Widget emailInput() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Email Address'),
-              const SizedBox(height: 10),
-              TextFormField(
-                cursorColor: kBlackColor,
-                decoration: InputDecoration(
-                  hintText: 'Enter your email address',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: kPrimaryColor),
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const CustomTextFormField(
+          title: 'Email Address',
+          hintText: 'Your Email Address',
         );
       }
 
       Widget passwordInput() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Password'),
-              const SizedBox(height: 10),
-              TextFormField(
-                obscureText: true,
-                cursorColor: kBlackColor,
-                decoration: InputDecoration(
-                  hintText: 'Your Password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: kPrimaryColor),
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const CustomTextFormField(
+          title: 'Password',
+          hintText: 'Your Password',
+          obsecureText: true,
         );
       }
 
       Widget hobbyInput() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Hobby'),
-              const SizedBox(height: 10),
-              TextFormField(
-                cursorColor: kBlackColor,
-                decoration: InputDecoration(
-                  hintText: 'Your Hobby',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: kPrimaryColor),
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
+        return const CustomTextFormField(
+            title: 'You Hobby', hintText: 'You Hobby');
       }
 
       Widget submitButton() {
         // ignore: sized_box_for_whitespace
-        return Container(
-          width: double.infinity,
-          height: 55,
-          child: TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/bonus');
-              },
-              style: TextButton.styleFrom(
-                  backgroundColor: kPrimaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                  )),
-              child: Text('Get Started',
-                  style: whiteTextStyle.copyWith(
-                      fontSize: 18, fontWeight: medium))),
+        return CustomButton(
+          title: 'Sign Up',
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              '/bonus',
+            );
+          },
         );
       }
 
