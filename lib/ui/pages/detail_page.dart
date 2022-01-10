@@ -95,7 +95,32 @@ class DetailPage extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            //NOTE: DESCRIPTION
+            Container(
+              margin: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              decoration: BoxDecoration(
+                color: kWhiteColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //NOTE: ABOUT
+                  Text(
+                    'About',
+                    style: blackTextStyle.copyWith(
+                        fontWeight: semiBold, fontSize: 16),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    'Berada di jalun jalan provinsi yang menghubungkan antara bangka belitung dan juga cianjur',
+                    style: blackTextStyle.copyWith(height: 2.6),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       );
